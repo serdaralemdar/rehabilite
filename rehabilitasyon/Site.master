@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %></title>
+     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+   
+     <link href="../assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+        
+   <link href="../assets/global/css/components-rounded.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+ 
+
+    
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Rehabilitasyon Otomasyonu</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Ana Sayfa</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hastalar
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/hastalar">Hasta Listesi</a></li>
+                                <li><a runat="server" href="~/hastakayit">Hasta Ekle</a></li>
+                            </ul>
+                        </li>
+                        
+                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Yakınlar
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/yakinlar">Yakınlar Listesi</a></li>
+                                <li><a runat="server" href="~/yakinekle">Yakın Ekle</a></li>
+                            </ul>
+                        </li>
+                          <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ziyaretçiler
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/ziyaretciler">Ziyaretçi Listesi</a></li>
+                                <li><a runat="server" href="~/ziyaretciekle">Ziyaretçi Ekle</a></li>
+                            </ul>
+                        </li>
+
+                                  <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">İlaçlar
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/ilaclar">İlaç Listesi</a></li>
+                                <li><a runat="server" href="~/ilacekle">İlaç Ekle</a></li>
+                            </ul>
+                        </li>
+                                   <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Randevular
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/randevular">Randevu Listesi</a></li>
+                                <li><a runat="server" href="~/randevuekle">Randevu Ekle</a></li>
+                            </ul>
+                        </li>
+
+                                   <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Doktorlar
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/doktorlar">Doktor Listesi</a></li>
+                                <li><a runat="server" href="~/doktorekle">Doktor Ekle</a></li>
+                            </ul>
+                        </li>
+
+                      
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                     <li><a runat="server" href="~/cikis"><span class="glyphicon glyphicon-log-out"></span> Çıkış</a></li>
+    </ul>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <br />
+            <br />
+            <br />
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - 163593044 - Serdar ALEMDAR</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
