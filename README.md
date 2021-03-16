@@ -1,6 +1,6 @@
 # rehabilite
 Bilgisayar Programcılı bölümü bitirme projesidir.
-
+C# ile yazılmıştır.
 Veritabanı olarak MSSQL Server 2016 kullanılmıştır.
 
 Projeden birkaç görüntü :
